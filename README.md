@@ -30,6 +30,4 @@ This project demonstrates a basic **CRUD (Create, Read, Update, Delete) API** bu
 # How to run locally
 1. Clone the repository
 2. Navigate to the project directory
-3. Install dependencies
-4. Create a .env file and add your MongoDB connection string
-5. Start the server
+
