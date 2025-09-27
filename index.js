@@ -1,4 +1,5 @@
 //Initialization
+require('dotenv').config();
 const express = require('express')
 const mongoose = require('mongoose');
 const Product = require('./models/product.model.js');
@@ -19,7 +20,7 @@ app.get('/api/products', async(req,res) => {
         const products = await Product.find({})
         res.status(200).json(products)
     } catch(error){
-        res.status(500).json({messaage: error.messaage});
+        res.status(500).json({message: error.message});
     }
 });
 
@@ -81,7 +82,7 @@ app.delete('/api/product/:id', async(req, res) => {
 
 
 //Database connection
-mongoose.connect('mongodb+srv://admin:ajay%402004@ajay.wu54d.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Ajay')
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log('Connected to database!');
     app.listen(3000,() => {
